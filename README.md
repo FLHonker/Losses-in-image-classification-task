@@ -103,7 +103,7 @@ $$
 L_{2}=-\frac{1}{N} \sum_{i=1}^{N} \log \frac{e^{s \cos \theta_{y_{i}}}}{e^{s \cos \theta_{y_{i}}}+\sum_{j=1, j \neq y_{i}}^{n} e^{s \cos \theta_{j}}}
 $$
 
-In order to increase intra-class compactness and improve inter-class discrepancy, an angular margin is added to a cosine of theta $y_i$.
+In order to increase intra-class compactness and improve inter-class discrepancy, an angular margin is added to a cosine of $\theta_{y_i}$.
 
 $$
 L_{3}=-\frac{1}{N} \sum_{i=1}^{N} \log \frac{e^{s\left(\cos \left(\theta_{y_{i}}+m\right)\right)}}{e^{s\left(\cos \left(\theta_{y_{i}}+m\right)\right)}+\sum_{j=1, j \neq y_{i}}^{n} e^{s \cos \theta_{j}}}
@@ -153,7 +153,7 @@ $$
 \mathcal{L}_{l k d}=-\sum_{i=1}^{N} \log \mathcal{N}\left(x_{i} ; \mu_{z_{i}}, \Sigma_{z_{i}}\right)
 $$
 
-This term forces features x_i to be sampled from the normal distribution with appropriate mean and covariance matrix.
+This term forces features $x_i$ to be sampled from the normal distribution with appropriate mean and covariance matrix.
 
 ![image][21]
 
