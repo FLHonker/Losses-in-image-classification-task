@@ -9,9 +9,12 @@ In this story, we’ll investigate what losses apply in which case.
 
 If there is a rare class in your dataset, its contribution to a summary loss is slight. To cope with this problem, the authors of the article <https://arxiv.org/abs/1708.02002> suggest applying an additional scale factor which reduces losses of those samples the model is sure of. Hard mining is provoking a classifier to focus on the most difficult cases which are samples of our rare class.
 
+
 $$
 p_{\mathrm{t}}=\left\{\begin{array}{ll}{p} & {\text { if } y=1} \\ {1-p} & {\text { otherwise }}\end{array}\right.
 $$
+
+<!-- ![][1] -->
 
 ![loss image][2]
 
@@ -20,6 +23,7 @@ Gamma controls decreasing speed for easy cases. If it’s close to 1 and the mod
 ## Center loss
 
 Softmax loss only encourages the separation of labels, leaving the discriminative power of features aside. There is a so-called center loss approach, as described in the article <https://arxiv.org/abs/1707.07391>. In addition to CE loss, center loss includes the distance from the sample to a center of the sample’s class.
+
 
 $$
 L=L_{s}+\lambda L_{c}
@@ -30,6 +34,10 @@ $L_s$ denotes the Softmax loss, $L_c$ denotes the center loss. $\lambda$ is a sc
 $$
 L_{c}=\frac{1}{2} \sum_{i=1}^{m}\left\|x_{i}-c_{y_{i}}\right\|_{2}^{2}
 $$
+
+<!-- ![][3] -->
+
+<!-- ![][4] -->
 
 Where $L_c$ denotes the center loss $m$ denotes the number of training samples in a min-batch. $x_i \in \mathbb{R}^{d}$ denotes the $i$-th training sample. $y_i$ denotes the label of $i$. $c_{y_i} \in \mathbb{R}^{d}$ denotes the $y_i$-th class center of deep features. $d$ is the feature dimension.
 
@@ -43,7 +51,7 @@ The center loss only stimulates intra-class compactness. This does not consider 
 
 $$
 L_{c t-c}=\frac{1}{2} \sum_{i=1}^{m} \frac{\left\|x_{i}-c_{y_{i}}\right\|_{2}^{2}}{\left(\sum_{j=1, j \neq y_{i}}^{k}\left\|x_{i}-c_{j}\right\|_{2}^{2}\right)+\delta}
-$$
+$$ 
 
 Where $L_{c t-c}$ denotes the contrastive-center loss. $m$ denotes
 the number of training samples in a min-batch. $x_{i} \in R_{d}$ de-
@@ -54,7 +62,9 @@ notes the number of class. $\delta$ is a constant used for preventing
 the denominator equal to $0 .$ In our experiments, we set $\delta=1$
 by default.
 
-![image][7]
+<!-- ![][6] -->
+
+<!-- ![image][7] -->
 
 ## Ring loss
 
@@ -67,9 +77,6 @@ $$
 L_{R}=\frac{\lambda}{2 m} \sum_{i=1}^{m}\left(\left\|\mathcal{F}\left(\mathbf{x}_{i}\right)\right\|_{2}-R\right)^{2}
 $$
 where $\mathcal{F}\left(\mathbf{x}_{i}\right)$ is the deep network feature for the sample $\mathbf{x}_{i}$.
-Here, $R$ is the target norm value which is also learned and $\lambda$
-is the loss weight enforcing a trade-off between the primary
-loss function. $m$ is the batch-size. 
 
 Visualizing features in 2D space we see the ring.
 
@@ -155,25 +162,25 @@ In the picture one can see samples which have the normal distribution in 2D spac
 [中文翻译][22]
 
 
-[1]:images/1_focal_loss.png
-[2]:images/2_focal_loss.png
-[3]:images/3_center_loss.png
-[4]:images/4_center_loss.png
-[5]:images/5_center_loss.png
-[6]:images/6_Contrastive_center_loss.png
-[7]:images/7_Contrastive_center_loss.png
-[8]:images/8_Ring_loss.png
-[9]:images/9_Ring_loss.png
-[10]:images/10_ArcFace_loss.png
-[11]:images/11_ArcFace_loss.png
-[12]:images/12_ArcFace_loss.png
-[13]:images/13_ArcFace_loss.png
-[14]:images/14_ArcFace_loss.png
-[15]:images/15_SphereFace_loss.png
-[16]:images/16_CosFace_loss.png
-[17]:images/17_LGM_loss.png
-[18]:images/18_LGM_loss.png
-[19]:images/19_LGM_loss.png
-[20]:images/20_LGM_loss.png
-[21]:images/21_LGM_loss.png
+[1]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/1_focal_loss.png
+[2]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/2_focal_loss.png
+[3]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/3_center_loss.png
+[4]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/4_center_loss.png
+[5]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/5_center_loss.png
+[6]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/6_Contrastive_center_loss.png
+[7]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/7_Contrastive_center_loss.png
+[8]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/8_Ring_loss.png
+[9]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/9_Ring_loss.png
+[10]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/10_ArcFace_loss.png
+[11]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/11_ArcFace_loss.png
+[12]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/12_ArcFace_loss.png
+[13]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/13_ArcFace_loss.png
+[14]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/14_ArcFace_loss.png
+[15]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/15_SphereFace_loss.png
+[16]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/16_CosFace_loss.png
+[17]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/17_LGM_loss.png
+[18]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/18_LGM_loss.png
+[19]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/19_LGM_loss.png
+[20]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/20_LGM_loss.png
+[21]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/21_LGM_loss.png
 [22]:https://mp.weixin.qq.com/s?__biz=MzU1NTUxNTM0Mg==&mid=2247492363&idx=3&sn=fbe4ef00893fab25759ef5d86346ab32&chksm=fbd18faacca606bcb7a4f0ed64efbd51407f6dd7350b2a65ae9dcc0458640dcb371d48f26413&scene=0&xtrack=1&key=bb4b4ce80aa09f92450c41d042c395a18b35a6158d0f8c49b636c7f5dd8a00c48ebd408a929b5a032ff14b80e34619998675873fb424ee2ce3ac875e60234595874fa6ff51f7a84adaa46e0ef485526b&ascene=14&uin=MTg2OTc4MzEzMg%3D%3D&devicetype=Windows+10&version=62070158&lang=zh_CN&pass_ticket=v4fZdWSDenIAdZMKrTiFXWdMfja83b4w%2F9lulM0CoeWjRfUYHUE1pXypvJb5LC3P
