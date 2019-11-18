@@ -159,7 +159,8 @@ This term forces features x_i to be sampled from the normal distribution with ap
 
 In the picture one can see samples which have the normal distribution in 2D space.
 
-[中文翻译][22]
+[origin][22]
+[中文翻译][23]
 
 
 [1]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/1_focal_loss.png
@@ -183,4 +184,5 @@ In the picture one can see samples which have the normal distribution in 2D spac
 [19]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/19_LGM_loss.png
 [20]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/20_LGM_loss.png
 [21]:https://raw.githubusercontent.com/FLHonker/Losses-in-image-classification-task/master/images/21_LGM_loss.png
-[22]:https://mp.weixin.qq.com/s?__biz=MzU1NTUxNTM0Mg==&mid=2247492363&idx=3&sn=fbe4ef00893fab25759ef5d86346ab32&chksm=fbd18faacca606bcb7a4f0ed64efbd51407f6dd7350b2a65ae9dcc0458640dcb371d48f26413&scene=0&xtrack=1&key=bb4b4ce80aa09f92450c41d042c395a18b35a6158d0f8c49b636c7f5dd8a00c48ebd408a929b5a032ff14b80e34619998675873fb424ee2ce3ac875e60234595874fa6ff51f7a84adaa46e0ef485526b&ascene=14&uin=MTg2OTc4MzEzMg%3D%3D&devicetype=Windows+10&version=62070158&lang=zh_CN&pass_ticket=v4fZdWSDenIAdZMKrTiFXWdMfja83b4w%2F9lulM0CoeWjRfUYHUE1pXypvJb5LC3P
+[22]:https://medium.com/@lightsanweb/losses-in-image-classification-task-7401a8348927
+[23]:https://mp.weixin.qq.com/s?__biz=MzU1NTUxNTM0Mg==&mid=2247492363&idx=3&sn=fbe4ef00893fab25759ef5d86346ab32&chksm=fbd18faacca606bcb7a4f0ed64efbd51407f6dd7350b2a65ae9dcc0458640dcb371d48f26413&scene=0&xtrack=1&key=bb4b4ce80aa09f92450c41d042c395a18b35a6158d0f8c49b636c7f5dd8a00c48ebd408a929b5a032ff14b80e34619998675873fb424ee2ce3ac875e60234595874fa6ff51f7a84adaa46e0ef485526b&ascene=14&uin=MTg2OTc4MzEzMg%3D%3D&devicetype=Windows+10&version=62070158&lang=zh_CN&pass_ticket=v4fZdWSDenIAdZMKrTiFXWdMfja83b4w%2F9lulM0CoeWjRfUYHUE1pXypvJb5LC3P
